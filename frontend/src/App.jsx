@@ -24,6 +24,13 @@ const dateTime = new Intl.DateTimeFormat('en-IN', {
   timeStyle: 'short',
 })
 
+const todayLabel = new Intl.DateTimeFormat('en-IN', {
+  weekday: 'long',
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+}).format(Date.now()).toUpperCase()
+
 function Icon({ name, size = 20 }) {
   const paths = {
     grid: <><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /></>,
@@ -74,7 +81,7 @@ function FormField({ label, ...props }) {
   return <label className="form-field"><span>{label}</span><input {...props} /></label>
 }
 
-function AuthScreen({ onAuthenticated }) {
+function AuthScreen({ onAuthenticated, initialError }) {
   const [mode, setMode] = useState('login')
   const [error, setError] = useState('')
   const [busy, setBusy] = useState(false)
@@ -112,6 +119,7 @@ function AuthScreen({ onAuthenticated }) {
             <FormField label="Full name" autoComplete="name" maxLength={90} required value={form.fullName} onChange={(event) => setForm({ ...form, fullName: event.target.value })} />
             <label className="form-field"><span>Account type</span><select value={form.accountType} onChange={(event) => setForm({ ...form, accountType: event.target.value })}>{accountTypes.map((type) => <option value={type.value} key={type.value}>{type.label}</option>)}</select></label>
           </>}
+          {initialError && !error && <div className="form-error" role="alert">{initialError}</div>}
           <FormField label="Email address" type="email" autoComplete="email" maxLength={254} required value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} />
           <FormField label="Password" type="password" autoComplete={mode === 'login' ? 'current-password' : 'new-password'} minLength={mode === 'login' ? undefined : 10} maxLength={72} required value={form.password} onChange={(event) => setForm({ ...form, password: event.target.value })} />
           {error && <div className="form-error" role="alert">{error}</div>}
@@ -125,11 +133,11 @@ function AuthScreen({ onAuthenticated }) {
   )
 }
 
-function TransactionDialog({ accounts, kind, onClose, onSubmit, busy, error }) {
+function TransactionDialog({ accounts, kind, onClose, onSubmit, busy, error, initialAccountNumber }) {
   const [form, setForm] = useState({
     fromAccountNumber: accounts[0]?.accountNumber || '',
     toAccountNumber: accounts.find((account) => account.accountNumber !== accounts[0]?.accountNumber)?.accountNumber || '',
-    accountNumber: accounts[0]?.accountNumber || '',
+    accountNumber: initialAccountNumber || accounts[0]?.accountNumber || '',
     amount: '',
     description: '',
     type: 'SAVINGS',
@@ -193,6 +201,7 @@ function App() {
   const [dialog, setDialog] = useState('')
   const [dialogBusy, setDialogBusy] = useState(false)
   const [dialogError, setDialogError] = useState('')
+  const [dialogAccountNumber, setDialogAccountNumber] = useState('')
 
   const loadDashboard = useCallback(async () => {
     setLoading(true)
@@ -215,17 +224,17 @@ function App() {
   useEffect(() => {
     let active = true
     request('/api/auth/me')
-      .then((currentCustomer) => { if (active) setCustomer(currentCustomer) })
+      .then(async (currentCustomer) => {
+        if (!active) return
+        setCustomer(currentCustomer)
+        await loadDashboard()
+      })
       .catch((requestError) => {
         if (active && !requestError.message.startsWith('Your session has expired')) setError(requestError.message)
       })
       .finally(() => { if (active) setAuthLoading(false) })
     return () => { active = false }
-  }, [])
-
-  useEffect(() => {
-    if (customer) loadDashboard()
-  }, [customer, loadDashboard])
+  }, [loadDashboard])
 
   const totalBalance = useMemo(
     () => accounts.reduce((total, account) => total + Number(account.balance), 0),
@@ -255,6 +264,7 @@ function App() {
     setCustomer(currentCustomer)
     setActivePage('Overview')
     setError('')
+    await loadDashboard()
   }
 
   async function signOut() {
@@ -309,7 +319,7 @@ function App() {
   if (authLoading) {
     return <main className="auth-page"><div className="loading-screen"><span className="loading-spinner" />Checking your secure session…</div></main>
   }
-  if (!customer) return <AuthScreen onAuthenticated={handleAuthenticated} />
+  if (!customer) return <AuthScreen onAuthenticated={handleAuthenticated} initialError={error} />
 
   const initial = customer.fullName.split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase()
   const checkingAccounts = accounts.filter((account) => account.type === 'CHECKING')
@@ -351,7 +361,7 @@ function App() {
 
         <div className="page-content">
           <section className="welcome-row">
-            <div><div className="eyebrow">{new Intl.DateTimeFormat('en-IN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date()).toUpperCase()}</div><h1>{activePage === 'Overview' ? `Welcome, ${customer.fullName.split(' ')[0]}` : activePage}</h1><p className="welcome-subtitle">{activePage === 'Overview' ? 'Here’s what’s happening with your money today.' : `Your ${activePage.toLowerCase()} at a glance.`}</p></div>
+            <div><div className="eyebrow">{todayLabel}</div><h1>{activePage === 'Overview' ? `Welcome, ${customer.fullName.split(' ')[0]}` : activePage}</h1><p className="welcome-subtitle">{activePage === 'Overview' ? 'Here’s what’s happening with your money today.' : `Your ${activePage.toLowerCase()} at a glance.`}</p></div>
             <div className="welcome-actions"><button className="secondary-button" onClick={() => { setDialogError(''); setDialog('deposit') }} disabled={accounts.length === 0}><Icon name="arrowDown" size={17} /> Add funds</button><button className="primary-button" onClick={() => { setDialogError(''); setDialog('transfer') }} disabled={accounts.length === 0}><Icon name="transfer" size={17} /> New transfer</button></div>
           </section>
 
@@ -370,7 +380,7 @@ function App() {
             <article className="panel savings-panel"><div className="panel-heading"><div><h2>Your accounts</h2><p>Balances in Indian rupees</p></div><button className="icon-button" aria-label="Create account" onClick={() => { setDialogError(''); setDialog('create') }}><Icon name="plus" /></button></div>{accounts.length ? <div className="account-list">{accounts.map((account) => <div className="account-list-row" key={account.id}><span className={`metric-icon ${account.type === 'SAVINGS' ? 'savings' : 'checking'}`}><Icon name={account.type === 'SAVINGS' ? 'activity' : 'wallet'} size={17} /></span><div className="account-list-info"><strong>{account.name}</strong><span>{account.type} · •• {account.accountNumber.slice(-4)}</span></div><b>{money.format(Number(account.balance))}</b></div>)}</div> : <div className="account-empty">Create an account to get started.</div>}<button className="text-button" onClick={() => { setDialogError(''); setDialog('create') }}>Open an account <Icon name="arrow" size={15} /></button></article>
           </section>}
 
-          {activePage === 'My accounts' && <section className="panel page-panel"><div className="panel-heading"><div><h2>My accounts</h2><p>Your accounts and balances in Indian rupees</p></div><button className="primary-button" onClick={() => { setDialogError(''); setDialog('create') }}><Icon name="plus" size={17} /> Open account</button></div>{accounts.map((account) => <div className="account-detail-row" key={account.id}><div className={`metric-icon ${account.type === 'SAVINGS' ? 'savings' : 'checking'}`}><Icon name={account.type === 'SAVINGS' ? 'activity' : 'wallet'} /></div><div className="account-list-info"><strong>{account.name}</strong><span>{account.type} account · {account.accountNumber}</span></div><b>{money.format(Number(account.balance))}</b><button className="secondary-button" onClick={() => { setDialogError(''); setDialog('deposit') }}>Add funds</button></div>)}</section>}
+          {activePage === 'My accounts' && <section className="panel page-panel"><div className="panel-heading"><div><h2>My accounts</h2><p>Your accounts and balances in Indian rupees</p></div><button className="primary-button" onClick={() => { setDialogError(''); setDialog('create') }}><Icon name="plus" size={17} /> Open account</button></div>{accounts.map((account) => <div className="account-detail-row" key={account.id}><div className={`metric-icon ${account.type === 'SAVINGS' ? 'savings' : 'checking'}`}><Icon name={account.type === 'SAVINGS' ? 'activity' : 'wallet'} /></div><div className="account-list-info"><strong>{account.name}</strong><span>{account.type} account · {account.accountNumber}</span></div><b>{money.format(Number(account.balance))}</b><button className="secondary-button" onClick={() => { setDialogAccountNumber(account.accountNumber); setDialogError(''); setDialog('deposit') }}>Add funds</button></div>)}</section>}
 
           {(activePage === 'Activity' || activePage === 'Transfers') && <section className="panel transactions-panel page-panel"><div className="panel-heading transactions-heading"><div><h2>{activePage === 'Transfers' ? 'Transfers' : 'Recent transactions'}</h2><p>Real account activity · amounts shown in INR</p></div>{activePage === 'Transfers' && <button className="primary-button" onClick={() => { setDialogError(''); setDialog('transfer') }}><Icon name="transfer" size={17} /> New transfer</button>}</div><TransactionList transactions={transactions} onSelect={(transaction) => showNotice(`${transaction.description || transaction.type} · ${money.format(Number(transaction.amount))}`)} /></section>}
 
@@ -378,7 +388,7 @@ function App() {
           <footer className="page-footer"><span>© {new Date().getFullYear()} Northstar Bank. Sample application.</span><span><Icon name="shield" size={14} /> Account balances and transactions are private</span></footer>
         </div>
       </main>
-      {dialog && <TransactionDialog accounts={accounts} kind={dialog} onClose={() => setDialog('')} onSubmit={submitDialog} busy={dialogBusy} error={dialogError} />}
+      {dialog && <TransactionDialog accounts={accounts} kind={dialog} initialAccountNumber={dialogAccountNumber} onClose={() => setDialog('')} onSubmit={submitDialog} busy={dialogBusy} error={dialogError} />}
       {notice && <div className="toast" role="status"><span className="toast-check">✓</span>{notice}<button aria-label="Dismiss message" onClick={() => setNotice('')}><Icon name="close" size={15} /></button></div>}
     </div>
   )
@@ -394,7 +404,7 @@ function TransactionList({ transactions, onSelect }) {
     const icon = transaction.type === 'DEPOSIT' ? 'arrowDown' : 'transfer'
     const color = transaction.type === 'DEPOSIT' ? 'mint' : incoming ? 'lavender' : 'blue'
     const title = transaction.description || (transaction.type === 'DEPOSIT' ? 'Deposit' : incoming ? 'Transfer received' : 'Transfer sent')
-    return <button className="transaction-row transaction-row-button" key={transaction.id} onClick={() => onSelect(transaction)}><span className={`transaction-icon ${color}`}><Icon name={icon} size={19} /></span><span className="transaction-info"><strong>{title}</strong><span>{transaction.type.replaceAll('_', ' ')} · {dateTime.format(new Date(transaction.createdAt))} · •• {transaction.accountNumber.slice(-4)}</span></span><span className={`transaction-amount ${incoming ? 'amount-incoming' : ''}`}>{incoming ? '+' : '−'}{money.format(Number(transaction.amount))}</span><Icon name="chevron" size={16} /></button>
+    return <button className="transaction-row transaction-row-button" key={transaction.id} onClick={() => onSelect(transaction)}><span className={`transaction-icon ${color}`}><Icon name={icon} size={19} /></span><span className="transaction-info"><strong>{title}</strong><span>{transaction.type.replaceAll('_', ' ')} · {dateTime.format(Date.parse(transaction.createdAt))} · •• {transaction.accountNumber.slice(-4)}</span></span><span className={`transaction-amount ${incoming ? 'amount-incoming' : ''}`}>{incoming ? '+' : '−'}{money.format(Number(transaction.amount))}</span><Icon name="chevron" size={16} /></button>
   })}</div>
 }
 
