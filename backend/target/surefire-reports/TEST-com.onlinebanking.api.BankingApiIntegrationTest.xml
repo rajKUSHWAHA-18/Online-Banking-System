@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.onlinebanking.api.BankingApiIntegrationTest" time="10.352" tests="2" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.onlinebanking.api.BankingApiIntegrationTest" time="2.404" tests="2" errors="0" skipped="0" failures="1">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,10 +13,9 @@
     <property name="java.vm.specification.version" value="25"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/local/sdkman/candidates/java/25.0.4+1-ms/lib"/>
-    <property name="sun.java.command" value="/workspaces/Online-Banking-System/backend/target/surefire/surefirebooter-20261014145359258_3.jar /workspaces/Online-Banking-System/backend/target/surefire 2026-10-14T14-53-59_129-jvmRun1 surefire-20261014145359258_1tmp surefire_0-20261014145359258_2tmp"/>
+    <property name="sun.java.command" value="/workspaces/Online-Banking-System/backend/target/surefire/surefirebooter-20261014155929974_3.jar /workspaces/Online-Banking-System/backend/target/surefire 2026-10-14T15-59-29_775-jvmRun1 surefire-20261014155929974_1tmp surefire_0-20261014155929974_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/workspaces/Online-Banking-System/backend/target/test-classes:/workspaces/Online-Banking-System/backend/target/classes:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.13/spring-boot-starter-data-jpa-3.4.13.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.13/spring-boot-starter-3.4.13.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot/3.4.13/spring-boot-3.4.13.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.13/spring-boot-autoconfigure-3.4.13.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.4.13/spring-boot-starter-logging-3.4.13.jar:/home/codespace/.m2/repository/ch/qos/logback/logback-classic/1.5.22/logback-classic-1.5.22.jar:/home/codespace/.m2/repository/ch/qos/logback/logback-core/1.5.22/logback-core-1.5.22.jar:/home/codespace/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/home/codespace/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/codespace/.m2/repository/org/slf4j/jul-to-slf4j/2.0.17/jul-to-slf4j-2.0.17.jar:/home/codespace/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/codespace/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.13/spring-boot-starter-jdbc-3.4.13.jar:/home/codespace/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/home/codespace/.m2/repository/org/springframework/spring-jdbc/6.2.15/spring-jdbc-6.2.15.jar:/home/codespace/.m2/repository/org/hibernate/orm/hibernate-core/6.6.39.Final/hibernate-core-6.6.39.Final.jar:/home/codespace/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/codespace/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/codespace/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/codespace/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/codespace/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/codespace/.m2/repository/com/fasterxml/classmate/1.7.1/classmate-1.7.1.jar:/home/codespace/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/home/codespace/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.6/jaxb-runtime-4.0.6.jar:/home/codespace/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.6/jaxb-core-4.0.6.jar:/home/codespace/.m2/repository/org/eclipse/angus/angus-activation/2.0.3/angus-activation-2.0.3.jar:/home/codespace/.m2/repository/org/glassfish/jaxb/txw2/4.0.6/txw2-4.0.6.jar:/home/codespace/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/codespace/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/codespace/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/codespace/.m2/repository/org/springframework/data/spring-data-jpa/3.4.13/spring-data-jpa-3.4.13.jar:/home/codespace/.m2/repository/org/springframework/data/spring-data-commons/3.4.13/spring-data-commons-3.4.13.jar:/home/codespace/.m2/repository/org/springframework/spring-orm/6.2.15/spring-orm-6.2.15.jar:/home/codespace/.m2/repository/org/springframework/spring-context/6.2.15/spring-context-6.2.15.jar:/home/codespace/.m2/repository/org/springframework/spring-tx/6.2.15/spring-tx-6.2.15.jar:/home/codespace/.m2/repository/org/springframework/spring-beans/6.2.15/spring-beans-6.2.15.jar:/home/codespace/.m2/repository/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar:/home/codespace/.m2/repository/org/springframework/spring-aspects/6.2.15/spring-aspects-6.2.15.jar:/home/codespace/.m2/repository/org/aspectj/aspectjweaver/1.9.25.1/aspectjweaver-1.9.25.1.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-starter-security/3.4.13/spring-boot-starter-security-3.4.13.jar:/home/codespace/.m2/repository/org/springframework/spring-aop/6.2.15/spring-aop-6.2.15.jar:/home/codespace/.m2/repository/org/springframework/security/spring-security-config/6.4.13/spring-security-config-6.4.13.jar:/home/codespace/.m2/repository/org/springframework/security/spring-security-web/6.4.13/spring-security-web-6.4.13.jar:/home/codespace/.m2/repository/org/springframework/spring-expression/6.2.15/spring-expression-6.2.15.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.4.13/spring-boot-starter-validation-3.4.13.jar:/home/codespace/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.50/tomcat-embed-el-10.1.50.jar:/home/codespace/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.3.Final/hibernate-validator-8.0.3.Final.jar:/home/codespace/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.13/spring-boot-starter-web-3.4.13.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.13/spring-boot-starter-json-3.4.13.jar:/home/codespace/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.5/jackson-databind-2.18.5.jar:/home/codespace/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.5/jackson-annotations-2.18.5.jar:/home/codespace/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.5/jackson-core-2.18.5.jar:/home/codespace/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.5/jackson-datatype-jdk8-2.18.5.jar:/home/codespace/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.5/jackson-datatype-jsr310-2.18.5.jar:/home/codespace/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.5/jackson-module-parameter-names-2.18.5.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.13/spring-boot-starter-tomcat-3.4.13.jar:/home/codespace/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.50/tomcat-embed-core-10.1.50.jar:/home/codespace/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.50/tomcat-embed-websocket-10.1.50.jar:/home/codespace/.m2/repository/org/springframework/spring-web/6.2.15/spring-web-6.2.15.jar:/home/codespace/.m2/repository/io/micrometer/micrometer-observation/1.14.14/micrometer-observation-1.14.14.jar:/home/codespace/.m2/repository/io/micrometer/micrometer-commons/1.14.14/micrometer-commons-1.14.14.jar:/home/codespace/.m2/repository/org/springframework/spring-webmvc/6.2.15/spring-webmvc-6.2.15.jar:/home/codespace/.m2/repository/com/mysql/mysql-connector-j/9.5.0/mysql-connector-j-9.5.0.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.13/spring-boot-starter-test-3.4.13.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-test/3.4.13/spring-boot-test-3.4.13.jar:/home/codespace/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.13/spring-boot-test-autoconfigure-3.4.13.jar:/home/codespace/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/codespace/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.4/jakarta.xml.bind-api-4.0.4.jar:/home/codespace/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.4/jakarta.activation-api-2.1.4.jar:/home/codespace/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/codespace/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/codespace/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/codespace/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/codespace/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/codespace/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/codespace/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/codespace/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/codespace/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/codespace/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/codespace/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/codespace/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/codespace/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/codespace/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/home/codespace/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/home/codespace/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/home/codespace/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/codespace/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/home/codespace/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/codespace/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/codespace/.m2/repository/org/springframework/spring-core/6.2.15/spring-core-6.2.15.jar:/home/codespace/.m2/repository/org/springframework/spring-jcl/6.2.15/spring-jcl-6.2.15.jar:/home/codespace/.m2/repository/org/springframework/spring-test/6.2.15/spring-test-6.2.15.jar:/home/codespace/.m2/repository/org/xmlunit/xmlunit-core/2.10.4/xmlunit-core-2.10.4.jar:/home/codespace/.m2/repository/org/springframework/security/spring-security-test/6.4.13/spring-security-test-6.4.13.jar:/home/codespace/.m2/repository/org/springframework/security/spring-security-core/6.4.13/spring-security-core-6.4.13.jar:/home/codespace/.m2/repository/org/springframework/security/spring-security-crypto/6.4.13/spring-security-crypto-6.4.13.jar:/home/codespace/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:"/>
-    <property name="test" value="BankingApiIntegrationTest"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/codespace"/>
     <property name="user.language" value="en"/>
@@ -31,7 +30,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="FILE_LOG_CHARSET" value="UTF-8"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="/workspaces/Online-Banking-System/backend/target/surefire/surefirebooter-20261014145359258_3.jar"/>
+    <property name="surefire.real.class.path" value="/workspaces/Online-Banking-System/backend/target/surefire/surefirebooter-20261014155929974_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.4.1+1-LTS"/>
     <property name="user.name" value="codespace"/>
@@ -50,7 +49,7 @@
     <property name="user.dir" value="/workspaces/Online-Banking-System/backend"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="34829"/>
+    <property name="PID" value="69528"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
@@ -62,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="depositsAndTransfersUpdateBalancesAndRecordBothSidesAtomically" classname="com.onlinebanking.api.BankingApiIntegrationTest" time="2.743">
+  <testcase name="depositsAndTransfersUpdateBalancesAndRecordBothSidesAtomically" classname="com.onlinebanking.api.BankingApiIntegrationTest" time="2.28">
     <failure message="expected: &lt;750.00&gt; but was: &lt;750.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <750.00> but was: <750.0>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -75,45 +74,8 @@
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 ]]></failure>
-    <system-out><![CDATA[14:54:00.658 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.onlinebanking.api.BankingApiIntegrationTest]: BankingApiIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:54:00.924 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.onlinebanking.BankingApplication for test class com.onlinebanking.api.BankingApiIntegrationTest
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::               (v3.4.13)
-
-2026-10-14T14:54:01.681Z  INFO 34829 --- [           main] c.o.api.BankingApiIntegrationTest        : Starting BankingApiIntegrationTest using Java 25.0.4.1 with PID 34829 (started by codespace in /workspaces/Online-Banking-System/backend)
-2026-10-14T14:54:01.687Z  INFO 34829 --- [           main] c.o.api.BankingApiIntegrationTest        : No active profile set, falling back to 1 default profile: "default"
-2026-10-14T14:54:02.927Z  INFO 34829 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-10-14T14:54:03.027Z  INFO 34829 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 3 JPA repository interfaces.
-2026-10-14T14:54:03.792Z  INFO 34829 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-10-14T14:54:03.843Z  INFO 34829 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.39.Final
-2026-10-14T14:54:03.873Z  INFO 34829 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-10-14T14:54:04.247Z  INFO 34829 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-10-14T14:54:04.277Z  INFO 34829 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-10-14T14:54:04.560Z  INFO 34829 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:banking-test user=SA
-2026-10-14T14:54:04.562Z  INFO 34829 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-10-14T14:54:04.634Z  INFO 34829 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 2.3.232
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-10-14T14:54:05.766Z  INFO 34829 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-10-14T14:54:05.823Z  INFO 34829 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-10-14T14:54:06.201Z  INFO 34829 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-10-14T14:54:07.008Z  INFO 34829 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
-2026-10-14T14:54:07.952Z  INFO 34829 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-10-14T14:54:07.952Z  INFO 34829 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-10-14T14:54:07.953Z  INFO 34829 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2026-10-14T14:54:07.994Z  INFO 34829 --- [           main] c.o.api.BankingApiIntegrationTest        : Started BankingApiIntegrationTest in 6.843 seconds (process running for 8.638)
+    <system-out><![CDATA[2026-10-14T15:59:41.531Z  INFO 69528 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.onlinebanking.api.BankingApiIntegrationTest]: BankingApiIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-10-14T15:59:41.572Z  INFO 69528 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.onlinebanking.BankingApplication for test class com.onlinebanking.api.BankingApiIntegrationTest
 
 MockHttpServletRequest:
       HTTP Method = GET
@@ -145,21 +107,21 @@ FlashMap:
 MockHttpServletResponse:
            Status = 200
     Error message = null
-          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Set-Cookie:"XSRF-TOKEN=b6cbbf56-745a-4dbd-adf0-e88c290cab6f; Path=/", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Set-Cookie:"XSRF-TOKEN=9602ac78-5c16-4179-9f1e-663e04a1b541; Path=/", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = {"token":"U0Fif2BlmjjWLh2gViO_dVVxdGXXGMrGeIB-ugE-PblJtSHjMXcBHQIDrw77GSmVNw6LETcVWQSzfvrrHbhG2TMHDdoo1xeF"}
+             Body = {"token":"33OgRAmMvK3-U7tm4owPsudNIn6Zcvdcwb8aKZwPzu5M03D15kWQdmjvi5XTZthX1KE7g9B0D0f_Q5Jx94kpTKw7r98u5kTE"}
     Forwarded URL = null
    Redirected URL = null
-          Cookies = [[Cookie@d7d984c name = 'XSRF-TOKEN', value = 'b6cbbf56-745a-4dbd-adf0-e88c290cab6f', comment = [null], domain = [null], maxAge = -1, path = '/', secure = false, version = 0, httpOnly = false]]
+          Cookies = [[Cookie@867e628 name = 'XSRF-TOKEN', value = '9602ac78-5c16-4179-9f1e-663e04a1b541', comment = [null], domain = [null], maxAge = -1, path = '/', secure = false, version = 0, httpOnly = false]]
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /api/auth/register
        Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", X-XSRF-TOKEN:"U0Fif2BlmjjWLh2gViO_dVVxdGXXGMrGeIB-ugE-PblJtSHjMXcBHQIDrw77GSmVNw6LETcVWQSzfvrrHbhG2TMHDdoo1xeF", Content-Length:"158", Cookie:"XSRF-TOKEN=b6cbbf56-745a-4dbd-adf0-e88c290cab6f"]
-             Body = {"fullName":"Test Customer","email":"customer-0a827064-dc78-4576-8966-33e08485a2b4@example.test","password":"correct horse battery","accountType":"CHECKING"}
+          Headers = [Content-Type:"application/json;charset=UTF-8", X-XSRF-TOKEN:"33OgRAmMvK3-U7tm4owPsudNIn6Zcvdcwb8aKZwPzu5M03D15kWQdmjvi5XTZthX1KE7g9B0D0f_Q5Jx94kpTKw7r98u5kTE", Content-Length:"158", Cookie:"XSRF-TOKEN=9602ac78-5c16-4179-9f1e-663e04a1b541"]
+             Body = {"fullName":"Test Customer","email":"customer-9314c549-72c5-4316-9c28-386b344e35d5@example.test","password":"correct horse battery","accountType":"CHECKING"}
 
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-0a827064-dc78-4576-8966-33e08485a2b4@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-9314c549-72c5-4316-9c28-386b344e35d5@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
 
 Handler:
              Type = com.onlinebanking.api.AuthController
@@ -185,10 +147,10 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Set-Cookie:"JSESSIONID=2", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = {"id":"2192ebb8-8a52-4697-8d9a-36b11cc53852","fullName":"Test Customer","email":"customer-0a827064-dc78-4576-8966-33e08485a2b4@example.test","createdAt":"2026-10-14T14:54:09.649213284Z"}
+             Body = {"id":"cc223a88-2891-44c4-8360-c6699c22407a","fullName":"Test Customer","email":"customer-9314c549-72c5-4316-9c28-386b344e35d5@example.test","createdAt":"2026-10-14T15:59:42.437830442Z"}
     Forwarded URL = null
    Redirected URL = null
-          Cookies = [[Cookie@447dec7e name = 'JSESSIONID', value = '2', comment = [null], domain = [null], maxAge = -1, path = [null], secure = false, version = 0, httpOnly = false]]
+          Cookies = [[Cookie@7959d16a name = 'JSESSIONID', value = '2', comment = [null], domain = [null], maxAge = -1, path = [null], secure = false, version = 0, httpOnly = false]]
 
 MockHttpServletRequest:
       HTTP Method = GET
@@ -196,7 +158,7 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = [Cookie:"JSESSIONID=2"]
              Body = null
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-0a827064-dc78-4576-8966-33e08485a2b4@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-9314c549-72c5-4316-9c28-386b344e35d5@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
 
 Handler:
              Type = com.onlinebanking.api.AccountController
@@ -222,7 +184,7 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = {"accounts":[{"id":"8f7ebbcf-effd-47e2-bfc3-a6b7288202c0","accountNumber":"618217636940","name":"Everyday account","type":"CHECKING","balance":0.00,"currency":"INR","createdAt":"2026-10-14T14:54:09.668228Z"}],"totalBalance":0.00,"currency":"INR"}
+             Body = {"accounts":[{"id":"185aa593-e090-4d27-bdfa-64807bd1dd83","accountNumber":"615775244759","name":"Everyday account","type":"CHECKING","balance":0.00,"currency":"INR","createdAt":"2026-10-14T15:59:42.464468Z"}],"totalBalance":0.00,"currency":"INR"}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
@@ -233,7 +195,7 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = [Cookie:"JSESSIONID=2"]
              Body = null
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-0a827064-dc78-4576-8966-33e08485a2b4@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-9314c549-72c5-4316-9c28-386b344e35d5@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
 
 Handler:
              Type = com.onlinebanking.api.AccountController
@@ -259,7 +221,7 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = {"accounts":[{"id":"8f7ebbcf-effd-47e2-bfc3-a6b7288202c0","accountNumber":"618217636940","name":"Everyday account","type":"CHECKING","balance":0.00,"currency":"INR","createdAt":"2026-10-14T14:54:09.668228Z"}],"totalBalance":0.00,"currency":"INR"}
+             Body = {"accounts":[{"id":"185aa593-e090-4d27-bdfa-64807bd1dd83","accountNumber":"615775244759","name":"Everyday account","type":"CHECKING","balance":0.00,"currency":"INR","createdAt":"2026-10-14T15:59:42.464468Z"}],"totalBalance":0.00,"currency":"INR"}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
@@ -268,10 +230,10 @@ MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /api/accounts
        Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", X-XSRF-TOKEN:"U0Fif2BlmjjWLh2gViO_dVVxdGXXGMrGeIB-ugE-PblJtSHjMXcBHQIDrw77GSmVNw6LETcVWQSzfvrrHbhG2TMHDdoo1xeF", Content-Length:"38", Cookie:"XSRF-TOKEN=b6cbbf56-745a-4dbd-adf0-e88c290cab6f; JSESSIONID=2"]
+          Headers = [Content-Type:"application/json;charset=UTF-8", X-XSRF-TOKEN:"33OgRAmMvK3-U7tm4owPsudNIn6Zcvdcwb8aKZwPzu5M03D15kWQdmjvi5XTZthX1KE7g9B0D0f_Q5Jx94kpTKw7r98u5kTE", Content-Length:"38", Cookie:"XSRF-TOKEN=9602ac78-5c16-4179-9f1e-663e04a1b541; JSESSIONID=2"]
              Body = {"type":"SAVINGS","name":"Rainy day"}
 
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-0a827064-dc78-4576-8966-33e08485a2b4@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-9314c549-72c5-4316-9c28-386b344e35d5@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
 
 Handler:
              Type = com.onlinebanking.api.AccountController
@@ -297,19 +259,19 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Set-Cookie:"XSRF-TOKEN=; Path=/; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = {"id":"3480822a-5da0-432e-b876-5127c9f6bc49","accountNumber":"614578365451","name":"Rainy day","type":"SAVINGS","balance":0.00,"currency":"INR","createdAt":"2026-10-14T14:54:10.609622340Z"}
+             Body = {"id":"ae040a40-7d03-47ee-a1be-db317821c658","accountNumber":"618789710448","name":"Rainy day","type":"SAVINGS","balance":0.00,"currency":"INR","createdAt":"2026-10-14T15:59:43.580882247Z"}
     Forwarded URL = null
    Redirected URL = null
-          Cookies = [[Cookie@201ac0ef name = 'XSRF-TOKEN', value = '', comment = [null], domain = [null], maxAge = 0, path = '/', secure = false, version = 0, httpOnly = false]]
+          Cookies = [[Cookie@39badc71 name = 'XSRF-TOKEN', value = '', comment = [null], domain = [null], maxAge = 0, path = '/', secure = false, version = 0, httpOnly = false]]
 
 MockHttpServletRequest:
       HTTP Method = POST
-      Request URI = /api/accounts/618217636940/deposits
+      Request URI = /api/accounts/615775244759/deposits
        Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", X-XSRF-TOKEN:"U0Fif2BlmjjWLh2gViO_dVVxdGXXGMrGeIB-ugE-PblJtSHjMXcBHQIDrw77GSmVNw6LETcVWQSzfvrrHbhG2TMHDdoo1xeF", Content-Length:"42", Cookie:"XSRF-TOKEN=b6cbbf56-745a-4dbd-adf0-e88c290cab6f; JSESSIONID=2"]
+          Headers = [Content-Type:"application/json;charset=UTF-8", X-XSRF-TOKEN:"33OgRAmMvK3-U7tm4owPsudNIn6Zcvdcwb8aKZwPzu5M03D15kWQdmjvi5XTZthX1KE7g9B0D0f_Q5Jx94kpTKw7r98u5kTE", Content-Length:"42", Cookie:"XSRF-TOKEN=9602ac78-5c16-4179-9f1e-663e04a1b541; JSESSIONID=2"]
              Body = {"amount":1000.00,"description":"Payday"}
 
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-0a827064-dc78-4576-8966-33e08485a2b4@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-9314c549-72c5-4316-9c28-386b344e35d5@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
 
 Handler:
              Type = com.onlinebanking.api.AccountController
@@ -335,19 +297,19 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Set-Cookie:"XSRF-TOKEN=; Path=/; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = {"id":"8f7ebbcf-effd-47e2-bfc3-a6b7288202c0","accountNumber":"618217636940","name":"Everyday account","type":"CHECKING","balance":1000.00,"currency":"INR","createdAt":"2026-10-14T14:54:09.668228Z"}
+             Body = {"id":"185aa593-e090-4d27-bdfa-64807bd1dd83","accountNumber":"615775244759","name":"Everyday account","type":"CHECKING","balance":1000.00,"currency":"INR","createdAt":"2026-10-14T15:59:42.464468Z"}
     Forwarded URL = null
    Redirected URL = null
-          Cookies = [[Cookie@7d9f0cf4 name = 'XSRF-TOKEN', value = '', comment = [null], domain = [null], maxAge = 0, path = '/', secure = false, version = 0, httpOnly = false]]
+          Cookies = [[Cookie@13b6f82d name = 'XSRF-TOKEN', value = '', comment = [null], domain = [null], maxAge = 0, path = '/', secure = false, version = 0, httpOnly = false]]
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /api/transfers
        Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", X-XSRF-TOKEN:"U0Fif2BlmjjWLh2gViO_dVVxdGXXGMrGeIB-ugE-PblJtSHjMXcBHQIDrw77GSmVNw6LETcVWQSzfvrrHbhG2TMHDdoo1xeF", Content-Length:"86", Cookie:"XSRF-TOKEN=b6cbbf56-745a-4dbd-adf0-e88c290cab6f; JSESSIONID=2"]
-             Body = {"fromAccountNumber":"618217636940","toAccountNumber":"614578365451","amount":250.00}
+          Headers = [Content-Type:"application/json;charset=UTF-8", X-XSRF-TOKEN:"33OgRAmMvK3-U7tm4owPsudNIn6Zcvdcwb8aKZwPzu5M03D15kWQdmjvi5XTZthX1KE7g9B0D0f_Q5Jx94kpTKw7r98u5kTE", Content-Length:"86", Cookie:"XSRF-TOKEN=9602ac78-5c16-4179-9f1e-663e04a1b541; JSESSIONID=2"]
+             Body = {"fromAccountNumber":"615775244759","toAccountNumber":"618789710448","amount":250.00}
 
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-0a827064-dc78-4576-8966-33e08485a2b4@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-9314c549-72c5-4316-9c28-386b344e35d5@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
 
 Handler:
              Type = com.onlinebanking.api.AccountController
@@ -373,19 +335,19 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Set-Cookie:"XSRF-TOKEN=; Path=/; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = [{"id":"fc2d9806-4141-46ef-b1d2-9f7d6980c895","referenceId":"1a291b2f-8482-4e8c-934c-ca7a9a777ae6","accountNumber":"618217636940","type":"TRANSFER_OUT","amount":250.00,"balanceAfter":750.00,"description":"Account transfer","counterpartyAccountNumber":"614578365451","createdAt":"2026-10-14T14:54:10.691913721Z"},{"id":"3fae2d2a-3061-4ce9-8e74-8bf0be2b6a15","referenceId":"1a291b2f-8482-4e8c-934c-ca7a9a777ae6","accountNumber":"614578365451","type":"TRANSFER_IN","amount":250.00,"balanceAfter":250.00,"description":"Account transfer","counterpartyAccountNumber":"618217636940","createdAt":"2026-10-14T14:54:10.692559876Z"}]
+             Body = [{"id":"d5f9a003-30c3-4a18-a807-c855f6a26065","referenceId":"9595456e-119e-4690-a431-58c9fd3269b1","accountNumber":"615775244759","type":"TRANSFER_OUT","amount":250.00,"balanceAfter":750.00,"description":"Account transfer","counterpartyAccountNumber":"618789710448","createdAt":"2026-10-14T15:59:43.684275455Z"},{"id":"dcd984a5-ec33-4816-bdf2-52085e58534c","referenceId":"9595456e-119e-4690-a431-58c9fd3269b1","accountNumber":"618789710448","type":"TRANSFER_IN","amount":250.00,"balanceAfter":250.00,"description":"Account transfer","counterpartyAccountNumber":"615775244759","createdAt":"2026-10-14T15:59:43.684520933Z"}]
     Forwarded URL = null
    Redirected URL = null
-          Cookies = [[Cookie@591e3e5e name = 'XSRF-TOKEN', value = '', comment = [null], domain = [null], maxAge = 0, path = '/', secure = false, version = 0, httpOnly = false]]
+          Cookies = [[Cookie@46ac9125 name = 'XSRF-TOKEN', value = '', comment = [null], domain = [null], maxAge = 0, path = '/', secure = false, version = 0, httpOnly = false]]
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /api/transfers
        Parameters = {}
-          Headers = [Content-Type:"application/json;charset=UTF-8", X-XSRF-TOKEN:"U0Fif2BlmjjWLh2gViO_dVVxdGXXGMrGeIB-ugE-PblJtSHjMXcBHQIDrw77GSmVNw6LETcVWQSzfvrrHbhG2TMHDdoo1xeF", Content-Length:"87", Cookie:"XSRF-TOKEN=b6cbbf56-745a-4dbd-adf0-e88c290cab6f; JSESSIONID=2"]
-             Body = {"fromAccountNumber":"618217636940","toAccountNumber":"614578365451","amount":1000.00}
+          Headers = [Content-Type:"application/json;charset=UTF-8", X-XSRF-TOKEN:"33OgRAmMvK3-U7tm4owPsudNIn6Zcvdcwb8aKZwPzu5M03D15kWQdmjvi5XTZthX1KE7g9B0D0f_Q5Jx94kpTKw7r98u5kTE", Content-Length:"87", Cookie:"XSRF-TOKEN=9602ac78-5c16-4179-9f1e-663e04a1b541; JSESSIONID=2"]
+             Body = {"fromAccountNumber":"615775244759","toAccountNumber":"618789710448","amount":1000.00}
 
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-0a827064-dc78-4576-8966-33e08485a2b4@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-9314c549-72c5-4316-9c28-386b344e35d5@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
 
 Handler:
              Type = com.onlinebanking.api.AccountController
@@ -411,10 +373,10 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Set-Cookie:"XSRF-TOKEN=; Path=/; Max-Age=0; Expires=Thu, 01 Jan 1970 00:00:00 GMT", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = {"error":"Conflict","message":"Insufficient funds for this transfer.","timestamp":"2026-10-14T14:54:10.722524025Z"}
+             Body = {"error":"Conflict","message":"Insufficient funds for this transfer.","timestamp":"2026-10-14T15:59:43.761213415Z"}
     Forwarded URL = null
    Redirected URL = null
-          Cookies = [[Cookie@263fc5f3 name = 'XSRF-TOKEN', value = '', comment = [null], domain = [null], maxAge = 0, path = '/', secure = false, version = 0, httpOnly = false]]
+          Cookies = [[Cookie@5bfd3d0 name = 'XSRF-TOKEN', value = '', comment = [null], domain = [null], maxAge = 0, path = '/', secure = false, version = 0, httpOnly = false]]
 
 MockHttpServletRequest:
       HTTP Method = GET
@@ -422,7 +384,7 @@ MockHttpServletRequest:
        Parameters = {}
           Headers = [Cookie:"JSESSIONID=2"]
              Body = null
-    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-0a827064-dc78-4576-8966-33e08485a2b4@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=customer-9314c549-72c5-4316-9c28-386b344e35d5@example.test, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, CredentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_CUSTOMER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_CUSTOMER]]]}
 
 Handler:
              Type = com.onlinebanking.api.AccountController
@@ -448,17 +410,11 @@ MockHttpServletResponse:
     Error message = null
           Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
      Content type = application/json
-             Body = {"accounts":[{"id":"3480822a-5da0-432e-b876-5127c9f6bc49","accountNumber":"614578365451","name":"Rainy day","type":"SAVINGS","balance":250.00,"currency":"INR","createdAt":"2026-10-14T14:54:10.609622Z"},{"id":"8f7ebbcf-effd-47e2-bfc3-a6b7288202c0","accountNumber":"618217636940","name":"Everyday account","type":"CHECKING","balance":750.00,"currency":"INR","createdAt":"2026-10-14T14:54:09.668228Z"}],"totalBalance":1000.00,"currency":"INR"}
+             Body = {"accounts":[{"id":"ae040a40-7d03-47ee-a1be-db317821c658","accountNumber":"618789710448","name":"Rainy day","type":"SAVINGS","balance":250.00,"currency":"INR","createdAt":"2026-10-14T15:59:43.580882Z"},{"id":"185aa593-e090-4d27-bdfa-64807bd1dd83","accountNumber":"615775244759","name":"Everyday account","type":"CHECKING","balance":750.00,"currency":"INR","createdAt":"2026-10-14T15:59:42.464468Z"}],"totalBalance":1000.00,"currency":"INR"}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
 ]]></system-out>
-    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
-WARNING: A Java agent has been loaded dynamically (/home/codespace/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
-]]></system-err>
   </testcase>
-  <testcase name="accountDataRequiresAnAuthenticatedSession" classname="com.onlinebanking.api.BankingApiIntegrationTest" time="0.028"/>
+  <testcase name="accountDataRequiresAnAuthenticatedSession" classname="com.onlinebanking.api.BankingApiIntegrationTest" time="0.055"/>
 </testsuite>
