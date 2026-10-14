@@ -30,6 +30,7 @@ const todayLabel = new Intl.DateTimeFormat('en-IN', {
   month: 'long',
   year: 'numeric',
 }).format(Date.now()).toUpperCase()
+const currentYear = new Date(Date.now()).getFullYear()
 
 function Icon({ name, size = 20 }) {
   const paths = {
@@ -362,7 +363,7 @@ function App() {
         <div className="page-content">
           <section className="welcome-row">
             <div><div className="eyebrow">{todayLabel}</div><h1>{activePage === 'Overview' ? `Welcome, ${customer.fullName.split(' ')[0]}` : activePage}</h1><p className="welcome-subtitle">{activePage === 'Overview' ? 'Here’s what’s happening with your money today.' : `Your ${activePage.toLowerCase()} at a glance.`}</p></div>
-            <div className="welcome-actions"><button className="secondary-button" onClick={() => { setDialogError(''); setDialog('deposit') }} disabled={accounts.length === 0}><Icon name="arrowDown" size={17} /> Add funds</button><button className="primary-button" onClick={() => { setDialogError(''); setDialog('transfer') }} disabled={accounts.length === 0}><Icon name="transfer" size={17} /> New transfer</button></div>
+            <div className="welcome-actions"><button className="secondary-button" onClick={() => { setDialogAccountNumber(''); setDialogError(''); setDialog('deposit') }} disabled={accounts.length === 0}><Icon name="arrowDown" size={17} /> Add funds</button><button className="primary-button" onClick={() => { setDialogError(''); setDialog('transfer') }} disabled={accounts.length === 0}><Icon name="transfer" size={17} /> New transfer</button></div>
           </section>
 
           {error && <div className="api-error" role="alert"><span>{error}</span><button onClick={loadDashboard}>Try again</button></div>}
@@ -385,7 +386,7 @@ function App() {
           {(activePage === 'Activity' || activePage === 'Transfers') && <section className="panel transactions-panel page-panel"><div className="panel-heading transactions-heading"><div><h2>{activePage === 'Transfers' ? 'Transfers' : 'Recent transactions'}</h2><p>Real account activity · amounts shown in INR</p></div>{activePage === 'Transfers' && <button className="primary-button" onClick={() => { setDialogError(''); setDialog('transfer') }}><Icon name="transfer" size={17} /> New transfer</button>}</div><TransactionList transactions={transactions} onSelect={(transaction) => showNotice(`${transaction.description || transaction.type} · ${money.format(Number(transaction.amount))}`)} /></section>}
 
           {activePage === 'Overview' && <section className="panel transactions-panel"><div className="panel-heading transactions-heading"><div><h2>Recent transactions</h2><p>Your latest account activity</p></div><button className="view-all" onClick={() => setActivePage('Activity')}>View all activity <Icon name="arrow" size={15} /></button></div><TransactionList transactions={transactions.slice(0, 5)} onSelect={(transaction) => showNotice(`${transaction.description || transaction.type} · ${money.format(Number(transaction.amount))}`)} /></section>}
-          <footer className="page-footer"><span>© {new Date().getFullYear()} Northstar Bank. Sample application.</span><span><Icon name="shield" size={14} /> Account balances and transactions are private</span></footer>
+          <footer className="page-footer"><span>© {currentYear} Northstar Bank. Sample application.</span><span><Icon name="shield" size={14} /> Account balances and transactions are private</span></footer>
         </div>
       </main>
       {dialog && <TransactionDialog accounts={accounts} kind={dialog} initialAccountNumber={dialogAccountNumber} onClose={() => setDialog('')} onSubmit={submitDialog} busy={dialogBusy} error={dialogError} />}

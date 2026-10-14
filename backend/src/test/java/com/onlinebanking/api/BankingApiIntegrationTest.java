@@ -5,6 +5,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -82,10 +83,10 @@ class BankingApiIntegrationTest {
                 .andExpect(status().isConflict());
 
         JsonNode finalAccounts = getJson("/api/accounts", session);
-        org.junit.jupiter.api.Assertions.assertEquals("750.00",
-                finalAccounts.path("accounts").get(1).path("balance").decimalValue().toPlainString());
-        org.junit.jupiter.api.Assertions.assertEquals("250.00",
-                finalAccounts.path("accounts").get(0).path("balance").decimalValue().toPlainString());
+        org.junit.jupiter.api.Assertions.assertEquals(new BigDecimal("750.00"),
+                finalAccounts.path("accounts").get(1).path("balance").decimalValue().setScale(2));
+        org.junit.jupiter.api.Assertions.assertEquals(new BigDecimal("250.00"),
+                finalAccounts.path("accounts").get(0).path("balance").decimalValue().setScale(2));
         mockMvc.perform(get("/api/transactions").cookie(session.sessionCookie()))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.length()").value(3));

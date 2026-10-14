@@ -1,16 +1,9 @@
-# React + Vite
+# Online banking frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Run locally
 
-Currently, two official plugins are available:
+1. Start MySQL and the Spring Boot API in `backend`. The API uses the defaults in `backend/src/main/resources/application.properties` unless the `BANK_DB_*` environment variables override them.
+2. Run `npm install` and `npm run dev` from this directory.
+3. Open <http://localhost:5173>. Vite proxies `/api` requests to the API on port 8080 so the browser's session and CSRF cookies are shared with the frontend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Register a test customer or sign in with an existing test account. The dashboard displays live account and transaction data, and supports creating accounts, recording deposits, and transferring money. All monetary values are displayed in Indian rupees (INR). This educational application is not connected to a real bank or payment network.

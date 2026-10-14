@@ -294,7 +294,7 @@
   .mobile-menu { display: grid; }
   .breadcrumb { flex: 1; }
   .topbar-actions { gap: 9px; }
-  .demo-pill { padding: 6px; font-size: 8px; }
+  .live-pill { padding: 6px; font-size: 8px; }
   .search-button,.topbar-divider { display: none; }
   .page-content { padding: 24px 17px 18px; }
   .welcome-row { align-items: flex-end; }
@@ -319,7 +319,7 @@
 @media (max-width: 430px) {
   .topbar { padding-inline: 11px; gap: 8px; }
   .topbar-actions { gap: 6px; }
-  .demo-pill { gap: 4px; font-size: 7px; letter-spacing: .3px; }
+  .live-pill { gap: 4px; font-size: 7px; letter-spacing: .3px; }
   .breadcrumb { gap: 5px; font-size: 10px; }
   .page-content { padding-inline: 12px; }
   .welcome-row { align-items: flex-start; }
