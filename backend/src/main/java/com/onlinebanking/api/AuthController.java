@@ -2,8 +2,10 @@ package com.onlinebanking.api;
 
 import java.util.Map;
 
+import com.onlinebanking.config.SessionContextStore;
 import com.onlinebanking.customer.Customer;
 import com.onlinebanking.customer.CustomerService;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -29,12 +31,14 @@ public class AuthController {
 
     private final CustomerService customers;
     private final AuthenticationManager authenticationManager;
+    private final SessionContextStore sessionContextStore;
     private final HttpSessionSecurityContextRepository contextRepository =
             new HttpSessionSecurityContextRepository();
 
-    public AuthController(CustomerService customers, AuthenticationManager authenticationManager) {
+    public AuthController(CustomerService customers, AuthenticationManager authenticationManager, SessionContextStore sessionContextStore) {
         this.customers = customers;
         this.authenticationManager = authenticationManager;
+        this.sessionContextStore = sessionContextStore;
     }
 
     @GetMapping("/csrf")
@@ -69,6 +73,7 @@ public class AuthController {
     public ApiDtos.MessageView logout(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session != null) {
+            sessionContextStore.clear(session.getId());
             session.invalidate();
         }
         SecurityContextHolder.clearContext();
@@ -83,13 +88,18 @@ public class AuthController {
 
     private void saveAuthentication(Authentication authentication, HttpServletRequest request,
                                     HttpServletResponse response) {
+        HttpSession session = request.getSession(true);
         if (request.getSession(false) != null) {
             request.changeSessionId();
+            session = request.getSession(true);
         }
         SecurityContext context = SecurityContextHolder.createEmptyContext();
         context.setAuthentication(authentication);
         SecurityContextHolder.setContext(context);
         contextRepository.saveContext(context, request, response);
+        session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY, context);
+        sessionContextStore.save(session.getId(), context);
+        response.addCookie(new Cookie("JSESSIONID", session.getId()));
     }
 
     private ApiDtos.CustomerView toView(Customer customer) {

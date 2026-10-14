@@ -1,6 +1,7 @@
 package com.onlinebanking.account;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.Instant;
 import java.util.UUID;
 
@@ -84,10 +85,15 @@ public class BankAccount {
     public Instant getCreatedAt() { return createdAt; }
 
     public void deposit(BigDecimal amount) {
-        balance = balance.add(amount);
+        balance = normalize(balance.add(normalize(amount)));
     }
 
     public void withdraw(BigDecimal amount) {
-        balance = balance.subtract(amount);
+        balance = balance.subtract(normalize(amount));
+        balance = normalize(balance);
+    }
+
+    private static BigDecimal normalize(BigDecimal value) {
+        return value.setScale(2, RoundingMode.HALF_UP);
     }
 }

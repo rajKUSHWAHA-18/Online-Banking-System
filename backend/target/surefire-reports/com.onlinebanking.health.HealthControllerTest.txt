@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.onlinebanking.health.HealthControllerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.388 s -- in com.onlinebanking.health.HealthControllerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.365 s -- in com.onlinebanking.health.HealthControllerTest

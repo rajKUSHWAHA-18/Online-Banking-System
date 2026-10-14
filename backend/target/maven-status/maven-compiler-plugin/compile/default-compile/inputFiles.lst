@@ -8,7 +8,10 @@
 /workspaces/Online-Banking-System/backend/src/main/java/com/onlinebanking/api/ApiException.java
 /workspaces/Online-Banking-System/backend/src/main/java/com/onlinebanking/api/ApiExceptionHandler.java
 /workspaces/Online-Banking-System/backend/src/main/java/com/onlinebanking/api/AuthController.java
+/workspaces/Online-Banking-System/backend/src/main/java/com/onlinebanking/config/JacksonConfig.java
 /workspaces/Online-Banking-System/backend/src/main/java/com/onlinebanking/config/SecurityConfig.java
+/workspaces/Online-Banking-System/backend/src/main/java/com/onlinebanking/config/SessionContextFilter.java
+/workspaces/Online-Banking-System/backend/src/main/java/com/onlinebanking/config/SessionContextStore.java
 /workspaces/Online-Banking-System/backend/src/main/java/com/onlinebanking/customer/Customer.java
 /workspaces/Online-Banking-System/backend/src/main/java/com/onlinebanking/customer/CustomerDetailsService.java
 /workspaces/Online-Banking-System/backend/src/main/java/com/onlinebanking/customer/CustomerRepository.java

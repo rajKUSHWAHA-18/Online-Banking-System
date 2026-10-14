@@ -1,6 +1,7 @@
 package com.onlinebanking.transaction;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.Instant;
 import java.util.UUID;
 
@@ -60,10 +61,14 @@ public class LedgerEntry {
         this.referenceId = referenceId;
         this.account = account;
         this.type = type;
-        this.amount = amount;
-        this.balanceAfter = account.getBalance();
+        this.amount = normalize(amount);
+        this.balanceAfter = normalize(account.getBalance());
         this.description = description;
         this.counterpartyAccountNumber = counterpartyAccountNumber;
+    }
+
+    private static BigDecimal normalize(BigDecimal value) {
+        return value.setScale(2, RoundingMode.HALF_UP);
     }
 
     @PrePersist

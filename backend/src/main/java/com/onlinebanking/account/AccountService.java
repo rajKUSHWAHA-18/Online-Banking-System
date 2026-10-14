@@ -1,6 +1,7 @@
 package com.onlinebanking.account;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.security.SecureRandom;
 import java.util.List;
 import java.util.UUID;
@@ -35,7 +36,7 @@ public class AccountService {
                 .stream().map(AccountService::toView).toList();
         BigDecimal total = accountViews.stream().map(ApiDtos.AccountView::balance)
                 .reduce(BigDecimal.ZERO.setScale(2), BigDecimal::add);
-        return new ApiDtos.AccountListView(accountViews, total, "INR");
+        return new ApiDtos.AccountListView(accountViews, normalize(total), "INR");
     }
 
     @Transactional
@@ -66,8 +67,8 @@ public class AccountService {
                         PageRequest.of(0, boundedLimit))
                 .stream()
                 .map(entry -> new ApiDtos.TransactionView(entry.getId(), entry.getReferenceId(),
-                        entry.getAccount().getAccountNumber(), entry.getType(), entry.getAmount(),
-                        entry.getBalanceAfter(), entry.getDescription(), entry.getCounterpartyAccountNumber(),
+                        entry.getAccount().getAccountNumber(), entry.getType(), normalize(entry.getAmount()),
+                        normalize(entry.getBalanceAfter()), entry.getDescription(), entry.getCounterpartyAccountNumber(),
                         entry.getCreatedAt()))
                 .toList();
     }
@@ -103,7 +104,12 @@ public class AccountService {
     }
 
     static ApiDtos.AccountView toView(BankAccount account) {
+        BigDecimal normalized = normalize(account.getBalance());
         return new ApiDtos.AccountView(account.getId(), account.getAccountNumber(), account.getName(),
-                account.getType(), account.getBalance(), account.getCurrency(), account.getCreatedAt());
+                account.getType(), normalized, account.getCurrency(), account.getCreatedAt());
+    }
+
+    static BigDecimal normalize(BigDecimal value) {
+        return value == null ? BigDecimal.ZERO.setScale(2) : value.setScale(2, RoundingMode.HALF_UP);
     }
 }

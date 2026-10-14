@@ -1,6 +1,7 @@
 package com.onlinebanking.transaction;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
@@ -72,8 +73,12 @@ public class TransactionService {
 
     private ApiDtos.TransactionView toView(LedgerEntry entry) {
         return new ApiDtos.TransactionView(entry.getId(), entry.getReferenceId(),
-                entry.getAccount().getAccountNumber(), entry.getType(), entry.getAmount(),
-                entry.getBalanceAfter(), entry.getDescription(), entry.getCounterpartyAccountNumber(),
+                entry.getAccount().getAccountNumber(), entry.getType(), normalize(entry.getAmount()),
+                normalize(entry.getBalanceAfter()), entry.getDescription(), entry.getCounterpartyAccountNumber(),
                 entry.getCreatedAt());
+    }
+
+    private BigDecimal normalize(BigDecimal value) {
+        return value == null ? BigDecimal.ZERO.setScale(2) : value.setScale(2, RoundingMode.HALF_UP);
     }
 }
